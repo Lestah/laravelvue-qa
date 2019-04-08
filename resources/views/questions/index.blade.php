@@ -10,6 +10,17 @@
                 <div class="panel-body">
                     @foreach($questions as $question)
                         <div class="media">
+                            <div class=" counters pull-left">
+                                <div class="vote">
+                                    <strong>{{ $question->votes }}</strong> {{ str_plural('vote', $question->votes) }}
+                                </div>
+                                <div class="status {{ $question->status }}">
+                                    <strong>{{ $question->answers }}</strong> {{ str_plural('answer', $question->answers) }}
+                                </div>
+                                <div class="view">
+                                    {{ $question->views ." ". str_plural('view', $question->votes) }}
+                                </div>
+                            </div>
                             <div class="media-body">
                                 {{-- route('questions.show',$question->id) use model encapsulation --}}
                                 <h3 class="mt-0"><a href="{{ $question->url }}">{{ $question->title }}</a></h3>
