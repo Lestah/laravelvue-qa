@@ -11,6 +11,7 @@
                 
 
                 <div class="panel-body">
+                    @include('layouts._messages')
                     @foreach($questions as $question)
                         <div class="media">
                             <div class=" counters pull-left">
