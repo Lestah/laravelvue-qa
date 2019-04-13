@@ -26,6 +26,9 @@
                                 </div>
                             </div>
                             <div class="media-body">
+                                <div class="pull-right">
+                                    <a href="{{ route('questions.edit', $question->id) }}" class="btn">Edit</a>
+                                </div>
                                 {{-- route('questions.show',$question->id) use model encapsulation --}}
                                 <h3 class="mt-0"><a href="{{ $question->url }}">{{ $question->title }}</a></h3>
                                 <p class="lead">
