@@ -27,7 +27,12 @@
                             </div>
                             <div class="media-body">
                                 <div class="pull-right">
-                                    <a href="{{ route('questions.edit', $question->id) }}" class="btn">Edit</a>
+                                    <a href="{{ route('questions.edit', $question->id) }}" class="btn btn-primary btn-xs" style="margin-top:7px; margin-right:10px;">Edit</a>
+                                    <form method="post" action="{{ route('questions.destroy', $question->id) }}" class="pull-right" style="margin-top:6px;">
+                                        {{ method_field('DELETE') }}
+                                        {{ csrf_field() }} 
+                                        <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-xs">Delete</button>
+                                    </form>
                                 </div>
                                 {{-- route('questions.show',$question->id) use model encapsulation --}}
                                 <h3 class="mt-0"><a href="{{ $question->url }}">{{ $question->title }}</a></h3>
